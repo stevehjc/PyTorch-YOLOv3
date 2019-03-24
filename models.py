@@ -236,7 +236,7 @@ class Darknet(nn.Module):
         self.hyperparams, self.module_list = create_modules(self.module_defs)
         self.img_size = img_size
         self.seen = 0
-        self.header_info = np.array([0, 0, 0, self.seen, 0])
+        self.header_info = np.array([0, 0, 0, self.seen, 0],dtype=np.int32)
         self.loss_names = ["x", "y", "w", "h", "conf", "cls", "recall", "precision"]
 
     def forward(self, x, targets=None):
